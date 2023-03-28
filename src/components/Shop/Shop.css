@@ -8,5 +8,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 45px;
     margin: 120px 82px 0 104px;
+}
+
+.cart-container {
+    background-color: #FF9900;
 
 }
