@@ -11,7 +11,7 @@ const Cart = ({ cart }) => {
     for (const carts of cart) {
         // carts.quantity = carts.quantity || 1;
         if (carts.quantity === 0) {
-            carts.quantity = 1
+            carts.quantity = 1;
         }
         totalPrice = totalPrice + carts.price * carts.quantity;
         totalShipping = totalShipping + carts.shipping;
