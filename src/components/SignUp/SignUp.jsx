@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const SignUp = () => {
+    const [show, setShow] = useState(false)
     const [error, setError] = useState('')
     const { createUser } = useContext(AuthContext)
     const handleSignUp = (event) => {
@@ -45,15 +46,25 @@ const SignUp = () => {
                         placeholder='Your Email'
                         required
                     />
+
                 </div>
                 <div className='form-control'>
                     <label htmlFor="password">Password</label>
                     <input
-                        type="password"
+                        type={show ? "text" : "password"}
                         name="password"
                         placeholder='Your Password'
                         required
                     />
+                    <p onClick={() => setShow(!show)}>
+                        <small>
+                            {
+                                show ?
+                                    <span>Hide Password</span> :
+                                    <span>Show Password</span>
+                            }
+                        </small>
+                    </p>
                 </div>
                 <div className='form-control'>
                     <label htmlFor="confirm">Confirm Password</label>
